@@ -1,6 +1,7 @@
 {{
     config(
-        materialized='view'
+        materialized='table'
     )
 }}
-select * from SANTOSH_DB.SANTOSH_SCHEMA.BLOB_TABLE
+select * from 
+{{ source('santosh', 'blob_table') }}

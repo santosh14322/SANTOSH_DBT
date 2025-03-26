@@ -11,17 +11,14 @@
 
 with source_data as (
 
-    select 1 as id
-    union all
-    select null as id
+    select * from {{ ref('blod') }} a
+    inner join
+    {{ ref('customers') }} b
+    on a.menu_item_id = b.id
 
 )
 
-select *
+select id,full_name,menu_item_health_metrics_obj
 from source_data
 
-/*
-    Uncomment the line below to remove records with null `id` values
-*/
 
--- where id is not null

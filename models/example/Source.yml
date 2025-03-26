@@ -1,0 +1,14 @@
+version: 2
+sources:
+  - name: transforming
+    database: raw
+    schema: jaffle_shop
+    tables:
+      - name: customers
+      - name: orders
+  - name: santosh
+    database: santosh_db
+    schema: santosh_schema
+    tables:
+      - name: blob_table
+      - name: demo_table
